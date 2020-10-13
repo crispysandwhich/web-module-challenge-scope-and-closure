@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * the count variable is inside the function and the return is inside the function in counter 1 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ * count 1 uses closure because it uses a function within a function
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ * counter 1 code code be preferable when you are trying to create a dedicade counter function, in counter 2 its best when you are you just want to use want to call the counter function eatch time.
 */
 
 // counter1 code
@@ -56,9 +56,12 @@ function counter2() {
 
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
+function inning(numberOfInnings){
+    const points = 0;
+    for (let i = 1; i < numberOfInnings;i++){
+      points += Math.ceil(Math.random() * 2);
+    }
+    return points;
 
 }
 
@@ -76,9 +79,13 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, numberOfInnings){
 
   /*Code Here*/
+  return {
+    "home:": inning(numberOfInnings),
+    "away:": inning(numberOfInnings)
+  }
 
 }
 
@@ -103,8 +110,23 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, numberOfInnings) {
+  const retVar = `${i}th inning: ${getInningScore(inning(numberOfInnings))}`;
+
+  for (let i = 1; i<= numberOfInnings;i++){
+
+    if(i === 1){
+      console.log(`${i}st inning: ${getInningScore(inning(numberOfInnings))}`)
+    }else if(i === 2){
+      console.log(`${i}nd inning: ${getInningScore(inning(numberOfInnings))}`)
+    }else if (i === 3){
+      console.log(`${i}rd inning: ${getInningScore(inning(numberOfInnings))}`)
+    }else if (i === numberOfinnings){
+      console.log(`Final Score: ${getInningScore(inning(numberOfInnings))}`)
+    }else{
+      console.log(retVar)
+    }
+  }
 }
 
 

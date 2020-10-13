@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+- closure is preety much when your function is inside another function that works together to equal out a sum.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+- closure is being used inside the return function, becuase it equals a function that logs an answer
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+- the name will always be the same but the number is going to be different
 c. What is the lexical scope of `newRoll`? 
+- that will only work inside that annouymous function and wont work outside of it.
 
 ### Task 2c - Exit Ticket
 
